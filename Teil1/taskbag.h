@@ -7,7 +7,6 @@
 #define _TASKBAG_H_RPCGEN
 
 #include <rpc/rpc.h>
-#include <vector>
 
 
 #ifdef __cplusplus

@@ -13,6 +13,7 @@ using namespace std;
 
 static vector<Task*> taskbag;
 
+
 char **
 puttask_1_svc(Task *argp, struct svc_req *rqstp)
 {
@@ -36,6 +37,7 @@ puttask_1_svc(Task *argp, struct svc_req *rqstp)
 	
 	taskbag.push_back(tmp);
 	
+
 	return &result;
 }
 
