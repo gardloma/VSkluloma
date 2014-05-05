@@ -41,14 +41,22 @@ char **
 
 	char *tempType = *argp;
 	Task* fittingTask;
-	
-	
-	for (std::list<Task*>::const_iterator it = Taskbag.begin(); it != Taskbag.end(); ++it) {
-		if (strcmp( tempType, it->) == 0 ) {
 
+	if (Taskbag.empty() == false) {
+	for (std::list<Task*>::iterator it = Taskbag.begin(); it != Taskbag.end(); ++it) {
+		if (strcmp( tempType, (*it)->type ) == 0 ) {
+			if( (*it)->done == 0) {
+				fittingTask = *it;
+				break;
+			}
 		}
 	}
+	sprintf(result, "%d", fittingTask->id);
 
+	}
+	else {
+		// result = error message ?
+	}
 
 
 	/*
