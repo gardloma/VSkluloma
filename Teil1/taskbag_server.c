@@ -19,9 +19,12 @@ puttask_1_svc(Task *argp, struct svc_req *rqstp)
 	newTask = new Task;
 	newTask->id = argp->id;
 	newTask->done = 0;
+
 	// deep copy the strings because a shallow copy of the char pointers would fuck shit up.
 	char *newTypeString = new char[strlen(argp->type)];		// size of new arrays appropriate to the strings to copy
 	char *newDescrString = new char[strlen(argp->descr)];
+	newTypeString = argp->type;
+	newDescrString = argp->descr;
 	newTask->type = newTypeString;
 	newTask->descr = newDescrString;
 
