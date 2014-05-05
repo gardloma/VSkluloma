@@ -1,3 +1,10 @@
+*.pdf
+taskbag_server
+taskbag_client
+*.sln
+*.vcxproj
+*.filters
+
 #################
 ## Eclipse
 #################
