@@ -5,16 +5,29 @@
  */
 
 #include "taskbag.h"
+#include <list> // app
+
+std::list<Task*> Taskbag;
 
 char **
 puttask_1_svc(Task *argp, struct svc_req *rqstp)
 {
 	static char * result;
 
-	/*
-	 * insert server code here
-	 */
+	// construct / copy the Task for our TaskBag:
+	Task *newTask;
+	newTask = new Task;
+	newTask->id = argp->id;
+	newTask->done = 0;
+	// deep copy the strings because a shallow copy of the char pointers would fuck shit up.
+	char *newTypeString = new char[strlen(argp->type)];		// size of new arrays appropriate to the strings to copy
+	char *newDescrString = new char[strlen(argp->descr)];
+	newTask->type = newTypeString;
+	newTask->descr = newDescrString;
 
+	Taskbag.push_back( newTask ); 
+	
+	result = "taskAdded"; // compoiler warning: deprecated conversion from string constant to 'char*'
 	return &result;
 }
 

@@ -1,6 +1,9 @@
-Teil1/VS-Praktikum-Anleitung-1.pdf
-Teil1/taskbag_server
-Teil1/taskbag_client
+*.pdf
+taskbag_server
+taskbag_client
+*.sln
+*.vcxproj
+*.filters
 
 #################
 ## Eclipse
@@ -217,3 +220,4 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
