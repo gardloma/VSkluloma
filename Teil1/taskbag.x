@@ -1,14 +1,14 @@
-class Task{
+struct Task{
 	int id;
-	string type;
-	string descr;
+	string type<50>;
+	string descr<50>;
 	int done;
-}
+};
 
 program TaskBagService {
 	version ONE {
-		string putTask(string type, string descr) = 1;
-		string getTask(string type) = 2;
-		string readTask(string type) = 3;
+		string putTask(Task * t) = 1;
+		string getTask(string type<50>) = 2;
+		string readTask(string type<50>) = 3;
 	} = 1;
 } = 1337;
