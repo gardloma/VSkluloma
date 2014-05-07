@@ -12,6 +12,10 @@
 using namespace std;
 
 static vector<Task*> taskbag;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5b4f1effda13306e4059a1a1394effe8b898daca
 
 char **
 puttask_1_svc(Task *argp, struct svc_req *rqstp)
@@ -36,14 +40,29 @@ puttask_1_svc(Task *argp, struct svc_req *rqstp)
 	
 	taskbag.push_back(tmp);
 	
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5b4f1effda13306e4059a1a1394effe8b898daca
 	return &result;
 }
 
 int find(vector<Task*> bag, char *type){
+<<<<<<< HEAD
   for(int i = 0; i < bag.size(); i++){
     if((!strcmp(bag[i]->type, type)))
       if(bag[i]->done == 0)
 	return i;
+=======
+  printf("Search =  %s \n", type);
+  for(int i = 0; i < bag.size(); i++){
+    printf("Have = %s\n", bag[i]->type);
+    if((!strcmp(bag[i]->type, type)))
+      if(bag[i]->done == 0){
+	cout << i << endl;
+	return i;
+      }
+>>>>>>> 5b4f1effda13306e4059a1a1394effe8b898daca
   }
   return -1;
 }
@@ -51,8 +70,13 @@ int find(vector<Task*> bag, char *type){
 char **
 gettask_1_svc(char **argp, struct svc_req *rqstp)
 {
+<<<<<<< HEAD
 	static char * result;
 	result = (char *) NULL;
+=======
+	static char * result  = (char *) NULL;
+	printf("result =  %s \n", *argp);
+>>>>>>> 5b4f1effda13306e4059a1a1394effe8b898daca
 	/*
 	 * insert server code here
 	 */
@@ -60,7 +84,10 @@ gettask_1_svc(char **argp, struct svc_req *rqstp)
 	if(place != -1){
 	  result = taskbag[place]->descr;
 	  taskbag[place]->done = 1;
+<<<<<<< HEAD
 	  
+=======
+>>>>>>> 5b4f1effda13306e4059a1a1394effe8b898daca
 	}
 	return &result;
 }
@@ -68,8 +95,12 @@ gettask_1_svc(char **argp, struct svc_req *rqstp)
 char **
 readtask_1_svc(char **argp, struct svc_req *rqstp)
 {
+<<<<<<< HEAD
 	static char * result;
 	result = (char *) NULL;
+=======
+	static char * result = (char *) NULL;
+>>>>>>> 5b4f1effda13306e4059a1a1394effe8b898daca
 	//printf("result =  %s \n", *argp);
 
 	/*
@@ -77,7 +108,13 @@ readtask_1_svc(char **argp, struct svc_req *rqstp)
 	 */
 	int place = find(taskbag, *argp);
 	if(place != -1)
+<<<<<<< HEAD
 	  result = (taskbag[place]->descr);	
+=======
+	  result = (taskbag[place]->descr);
+	else
+	  result = "Not Found!";	
+>>>>>>> 5b4f1effda13306e4059a1a1394effe8b898daca
 	
 	return &result;
 }
