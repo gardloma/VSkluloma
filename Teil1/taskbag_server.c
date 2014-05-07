@@ -53,14 +53,12 @@ gettask_1_svc(char **argp, struct svc_req *rqstp)
 {
 	static char * result;
 	result = (char *) NULL;
-	printf("result =  %s \n", *argp);
 	/*
 	 * insert server code here
 	 */
 	int place = find(taskbag, *argp);
 	if(place != -1){
 	  result = taskbag[place]->descr;
-	  cout << taskbag[place]->done << endl;
 	  taskbag[place]->done = 1;
 	  
 	}
@@ -70,7 +68,8 @@ gettask_1_svc(char **argp, struct svc_req *rqstp)
 char **
 readtask_1_svc(char **argp, struct svc_req *rqstp)
 {
-	static char * result = (char *) NULL;
+	static char * result;
+	result = (char *) NULL;
 	//printf("result =  %s \n", *argp);
 
 	/*
