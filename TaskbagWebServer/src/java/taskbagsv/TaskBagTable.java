@@ -46,7 +46,7 @@ public class TaskBagTable {
 
     private int findTaskIDByType(String type) {
         for (int i = 0; i < this.taskbag.size(); i++) {
-            if (this.taskbag.get(i).getType() == type) {
+            if (this.taskbag.get(i).getType().equals(type)) {
                 if (this.taskbag.get(i).isDone() == false) {
                     return i;
                 }
