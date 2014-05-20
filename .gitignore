@@ -6,6 +6,18 @@ taskbag_client
 *.filters
 
 #################
+## Netbeans
+#################
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+
+
+#################
 ## Eclipse
 #################
 
@@ -221,3 +233,4 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 
+/TaskbagWebServer/nbproject/private/
