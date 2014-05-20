@@ -25,9 +25,8 @@ public class Taskbag {
      */
     @WebMethod(operationName = "putTask")
     public String putTask(@WebParam(name = "type") String type, @WebParam(name = "description") String description) {
-        this.taskBagTable.addTask(type, description);
-        
-        return null;
+        this.taskBagTable.addTask(type, description);        
+        return "Task added";
     }
 
     /**
@@ -35,8 +34,11 @@ public class Taskbag {
      */
     @WebMethod(operationName = "getTask")
     public String getTask(@WebParam(name = "type") String type) {
-        //TODO write your implementation code here:
-        return null;
+        String result = null;
+        while (result == null) { // block serverside
+            result = this.taskBagTable.getNextTaskByType(type);
+        }
+        return result;
     }
 
     /**
@@ -44,7 +46,10 @@ public class Taskbag {
      */
     @WebMethod(operationName = "readTask")
     public String readTask(@WebParam(name = "type") String type) {
-        //TODO write your implementation code here:
-        return null;
+        String result = null;
+        while (result == null) { // block serverside
+            result = this.taskBagTable.getNextTaskByType(type);
+        }
+        return result;
     }
 }
