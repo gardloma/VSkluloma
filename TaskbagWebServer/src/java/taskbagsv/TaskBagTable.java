@@ -18,13 +18,14 @@ public class TaskBagTable {
 
     public void addTask(String type, String descr) {
         Task tmp = new Task(type, descr);
-        tmp.setID(this.taskbag.size());
+        Integer place = this.taskbag.size();
+        tmp.setID(place);
         tmp.setDone(false);
 
-        this.taskbag.put(taskbag.size(), tmp);
+        this.taskbag.put(place, tmp);
     }
 
-    public String getNextTaskByType(String type) {
+    public String getNextTaskByType(String type) { // returns descr
         String result = null;
         int place = findTaskIDByType(type);
         if (place != -1) {

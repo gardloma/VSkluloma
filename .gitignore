@@ -234,3 +234,5 @@ pip-log.txt
 .mr.developer.cfg
 
 /TaskbagWebServer/nbproject/private/
+/taskbagClient1/nbproject/private/
+/taskbagClient2/nbproject/private/

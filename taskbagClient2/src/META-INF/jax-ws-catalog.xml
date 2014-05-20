@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://luka-xubuntu:8080/Taskbag/Taskbag?WSDL" uri="wsdl/luka-xubuntu_8080/Taskbag/Taskbag.wsdl"/>
+    <system systemId="http://luka-xubuntu:8080/Taskbag/Taskbag?xsd=1" uri="wsdl/luka-xubuntu_8080/Taskbag/Taskbag.xsd_1.xsd"/>
+</catalog>

@@ -48,7 +48,7 @@ public class Taskbag {
     public String readTask(@WebParam(name = "type") String type) {
         String result = null;
         while (result == null) { // block serverside
-            result = this.taskBagTable.getNextTaskByType(type);
+            result = this.taskBagTable.readNextTaskByType(type);
         }
         return result;
     }
